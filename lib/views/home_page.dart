@@ -30,17 +30,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(
-                color: Color(0xfff5f8fd),
-                borderRadius: BorderRadius.circular(50),
-              ),
+              //search bar
               padding: EdgeInsets.symmetric(horizontal: 20),
               margin: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: <Widget>[
                   Expanded(
                     child: TextField(
-                      decoration: InputDecoration(hintText: "search"),
+                      decoration: InputDecoration(hintText: "earch"),
                     ),
                   ),
                   Icon(
@@ -53,7 +50,15 @@ class _HomePageState extends State<HomePage> {
               height: 16,
             ),
             Container(
+              //categories
               height: 80,
+
+              decoration: BoxDecoration(
+                //color: Colors.blue,
+
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+
               child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
@@ -83,8 +88,13 @@ class CategoriesTile extends StatelessWidget {
     return Container(
       child: Stack(
         children: <Widget>[
-          Image.network(imgUrl),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.network(imgUrl),
+          ),
           Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            margin: EdgeInsets.symmetric(horizontal: 20),
             child: Text(title),
           )
         ],
