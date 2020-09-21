@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Expanded(
                     child: TextField(
-                      decoration: InputDecoration(hintText: "earch"),
+                      decoration: InputDecoration(hintText: "Search"),
                     ),
                   ),
                   Icon(
